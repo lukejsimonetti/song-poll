@@ -1,13 +1,26 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { PollAPIContext } from '../../contexts/PollAPIContext';
 import { Form, Button, ButtonGroup, Row, Col, Card, ListGroup } from "react-bootstrap";
 
 const View = props => {
-    const { polls } = useContext(PollAPIContext)
+    const { getPoll } = useContext(PollAPIContext)
+    const [currentPoll, setCurrentPoll] = useState([])
+
+    useEffect(() =>{
+        getPoll(props.match.params.id)
+        .then(res => {
+            setCurrentPoll(res.data)
+        })
+    }, [])
 
     return (
         <div>
-        {props.match.params.id}        
+            <ul>
+                {currentPoll.length > 0 && currentPoll.items.map(v => {
+                    return <li>{v}</li>
+                })} 
+            </ul>     
+            {JSON.stringify(currentPoll.items)}
         </div>
     );
 };
