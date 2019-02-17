@@ -1,5 +1,4 @@
 import React, { lazy, Suspense, memo, Component } from 'react'
-import './App.css';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Dashboard from './views/dashboard/Index'
 import Header from './components/Header'
@@ -11,10 +10,10 @@ class App extends Component {
   render() {
     return (
       <GlobalProvider>
-        <div className="App">
-          <Header />
-          <div className="container">
-            <Router>
+        <Router>
+          <div className="App">
+            <Header  />
+            <div className="container">
               <Suspense fallback={<div>loading</div>}>
                 <Switch>
                   {/* <Route exact path="/login" name="Login Page" component={requireNoAuth(Login)} /> */}
@@ -25,9 +24,9 @@ class App extends Component {
                   <Route path="/poll/" name="Polls" component={Polls} />
                 </Switch>
               </Suspense>
-            </Router>
+            </div>
           </div>
-        </div>
+        </Router>
       </GlobalProvider>
     );
   }

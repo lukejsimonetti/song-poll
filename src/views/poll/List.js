@@ -6,7 +6,9 @@ const List = props => {
     const { polls } = useContext(PollAPIContext)
 
     return (
-        <Col md={{ span: 6, offset: 3 }}>
+        <>
+        <h3>Polls</h3>
+        <Col md={{ span: 8, offset: 2 }}>
             <Card bg="dark">
                 {JSON.stringify(polls)}
                 <br />
@@ -16,18 +18,20 @@ const List = props => {
                     {polls && polls.map((v, i) => {
                         return (
                         <ListGroup.Item as="li" key={v.pollName}>
-                            <h5>{v.pollName} <i className="fa fa-plus text-success"/></h5>
+                            <h5>{v.pollName}
+                            <Button size="sm">
+                                <i className="fa fa-list-ol fa-1x" />
+                            </Button>
+                            </h5> 
                         </ListGroup.Item>
                         )
                     })}
                     </ListGroup>
                 </Col>
                 <br />
-                <Button onClick={() => props.history.push('/poll/add')}>
-                    Add
-            </Button>
             </Card>
         </Col>
+        </>
     );
 };
 

@@ -16,8 +16,11 @@ const AddPoll = props => {
         props.history.push('/poll/list')
     }
     return (
+        <>
+        <h3>New Poll</h3>
         <Col lg={{ span: 8, offset: 2 }}>
             <Card bg="dark">
+                <br/>
                 <FinalForm
                     onSubmit={e => submit(e)}
                     keepDirtyOnReinitialize={true}
@@ -34,8 +37,6 @@ const AddPoll = props => {
                         invalid
                     }) => (
                             <Form onSubmit={handleSubmit}>
-                                <h3>New Poll</h3>
-                                <br />
                                 <Row className="mb-3">
                                     <Col md={{span: 3, offset: 3}}>
                                         <Field
@@ -62,7 +63,7 @@ const AddPoll = props => {
                                         {({ fields }) =>
                                             fields.map((name, index) => (
                                                 <Col md={{span: 6, offset: 2}} key={name} className="mb-2">
-                                                    <span>{index + 1}. </span>
+                                                    <span>#{index + 1} </span>
                                                     <Field
                                                         validate={value => (value ? undefined : "Required")}
                                                         name={`${name}`}
@@ -98,6 +99,7 @@ const AddPoll = props => {
                 />
             </Card>
         </Col>
+        </>
     );
 };
 
