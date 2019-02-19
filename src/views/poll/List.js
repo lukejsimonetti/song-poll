@@ -4,7 +4,6 @@ import { Form, Button, ButtonGroup, Row, Col, Card, ListGroup } from "react-boot
 
 const List = props => {
     const { polls } = useContext(PollAPIContext)
-
     return (
         <>
             <h3>Polls</h3>

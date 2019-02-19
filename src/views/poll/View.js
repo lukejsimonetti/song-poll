@@ -15,11 +15,6 @@ const View = props => {
         }
     }, [])
 
-    const play = (link) => {
-        const win = window.open(link, '_blank')
-        win.focus()
-    }
-
     return (
         <Col md={{ span: 10, offset: 1 }}>
             <h3>{currentPoll.pollName}</h3>

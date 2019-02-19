@@ -1,13 +1,12 @@
 import React, { lazy, Suspense, memo, Component } from 'react'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch, withRouter } from 'react-router-dom'
 import Dashboard from './views/dashboard/Index'
 import Header from './components/Header'
 import GlobalProvider from './components/GlobalProvider'
 
 const Polls = lazy(() => import(/* webpackChunkName: "polls" */ './views/poll/Routes'))
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <GlobalProvider>
         <Router>
@@ -29,7 +28,6 @@ class App extends Component {
         </Router>
       </GlobalProvider>
     );
-  }
 }
 
 export default App;
