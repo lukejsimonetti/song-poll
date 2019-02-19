@@ -1,27 +1,48 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { PollAPIContext } from '../../contexts/PollAPIContext';
-import { Form, Button, ButtonGroup, Row, Col, Card, ListGroup } from "react-bootstrap";
+import { Table, Button, ButtonGroup, Row, Col, Card, ListGroup } from "react-bootstrap";
 
 const View = props => {
     const { getPoll } = useContext(PollAPIContext)
     const [currentPoll, setCurrentPoll] = useState([])
 
-    useEffect(() =>{
-        getPoll(props.match.params.id)
-        .then(res => {
-            setCurrentPoll(res.data)
-        })
+    useEffect(() => {
+        if (currentPoll.length == 0) {
+            getPoll(props.match.params.id)
+                .then(res => {
+                    setCurrentPoll(res.data)
+                })
+        }
     }, [])
 
     return (
-        <div>
-            <ul>
-                {currentPoll.length > 0 && currentPoll.items.map(v => {
-                    return <li>{v}</li>
-                })} 
-            </ul>     
-            {JSON.stringify(currentPoll.items)}
-        </div>
+        <Col md={{ span: 10, offset: 1 }}>
+            <h3>{currentPoll.pollName}</h3>
+            <Card bg="dark">
+                {JSON.stringify(currentPoll)}
+                <Table striped hover>
+                    <thead>
+                        <tr>
+                            <th>Song</th>
+                            <th>Link</th>
+                            <th>Vote</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { currentPoll.items && currentPoll.items.map((v,i) => {
+                            return (
+                                <tr key={i}>
+                                    <td><strong>{v}</strong></td>
+                                    <td>www.link.com</td>
+                                    <td></td>
+                                </tr>
+                            )
+                            })
+                        }
+                        </tbody>
+                </Table>
+            </Card>
+        </Col>
     );
 };
 
