@@ -15,6 +15,11 @@ const View = props => {
         }
     }, [])
 
+    const play = (link) => {
+        const win = window.open(link, '_blank')
+        win.focus()
+    }
+
     return (
         <Col md={{ span: 10, offset: 1 }}>
             <h3>{currentPoll.pollName}</h3>
@@ -23,8 +28,8 @@ const View = props => {
                 <Table striped hover>
                     <thead>
                         <tr>
-                            <th>Song</th>
-                            <th>Link</th>
+                            <th style={{width: 350, maxWidth: 250}} >Song</th>
+                            <th style={{width: 150}} ></th>
                             <th>Vote</th>
                         </tr>
                     </thead>
@@ -32,9 +37,21 @@ const View = props => {
                         { currentPoll.items && currentPoll.items.map((v,i) => {
                             return (
                                 <tr key={i}>
-                                    <td><strong>{v}</strong></td>
-                                    <td>www.link.com</td>
-                                    <td></td>
+                                    <td style={{
+                                        overflow: 'hidden',    
+                                    }}>
+                                        <strong>{v.item_label}</strong>
+                                    </td>
+                                    <td>
+                                        <a href={`${v.link}`} target="_blank">
+                                            <strong><i className="fa fa-link"/> Video Link</strong>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <Button variant="success" size="sm">
+                                            <i className="fa fa-thumbs-up"/>
+                                        </Button>
+                                    </td>
                                 </tr>
                             )
                             })

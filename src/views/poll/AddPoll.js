@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Form as FinalForm, Field } from "react-final-form";
 import arrayMutators from "final-form-arrays";
 import { FieldArray } from "react-final-form-arrays";
-import { Form, Button, ButtonGroup, Row, Col, Card } from "react-bootstrap";
+import { Form, Button, ButtonGroup, Row, Col, Card, InputGroup } from "react-bootstrap";
 
 import { PollAPIContext } from '../../contexts/PollAPIContext';
 import { AppStateContext } from '../../contexts/AppStateContext';
@@ -62,14 +62,22 @@ const AddPoll = props => {
                                     <FieldArray name="items">
                                         {({ fields }) =>
                                             fields.map((name, index) => (
-                                                <Col md={{span: 6, offset: 2}} key={name} className="mb-2">
+                                                <Col md={{span: 10}} key={name} className="mb-2">
                                                     <span>#{index + 1} </span>
                                                     <Field
                                                         validate={value => (value ? undefined : "Required")}
-                                                        name={`${name}`}
+                                                        name={`${name}.item_label`}
                                                         label="Item"
                                                         component="input"
                                                         placeholder={`Item`}
+                                                        style={{marginRight: 10}}
+                                                    />
+                                                    <Field
+                                                        validate={value => (value ? undefined : "Required")}
+                                                        name={`${name}.link`}
+                                                        label="Link"
+                                                        component="input"
+                                                        placeholder={`Link`}
                                                     />
                                                     <i className="fa fa-trash fa-1x text-danger"
                                                         style={{ paddingLeft: 4 }}
