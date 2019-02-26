@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
-import { AuthAPIContext } from '../contexts/AuthAPIContext';
+import { AuthAPIContext } from '../views/auth/requireAuth';
 
 const Header = ({ history }) => {
   const { authenticateUser } = useContext(AuthAPIContext)
