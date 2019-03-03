@@ -8,11 +8,9 @@ const View = lazy(() => import(/* webpackChunkName: "viewPoll" */ './View'))
 const Routes = () => {
     return (
         <Suspense fallback={<div>loading</div>}>
-            <Switch>
                 <Route exact path="/poll/add" name="AddPoll" component={AddPoll} />
                 <Route exact path="/poll/list" name="List" component={List} />
                 <Route exact path="/poll/view/:id" name="View" component={View} />
-            </Switch>
         </Suspense>
     );
 };

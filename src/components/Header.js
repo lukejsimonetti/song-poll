@@ -1,15 +1,8 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
-import { AuthAPIContext } from '../views/auth/requireAuth';
 
 const Header = ({ history }) => {
-  const { authenticateUser } = useContext(AuthAPIContext)
-  
-  history.listen((location, action) => {
-    authenticateUser()
-  })
-
   return (
     <div className="header">
       <h1 style={{ margin: 0, fontWeight: 200 }}>
@@ -17,11 +10,11 @@ const Header = ({ history }) => {
         </h1>
       <ButtonGroup style={{ marginRight: 25 }}>
         <Button variant="primary"
-          onClick={() => window.location.hash = '/poll/list'}>
+          onClick={() => history.push('/poll/list')}>
           Poll List
             </Button>
         <Button variant="success"
-          onClick={() => window.location.hash = '/poll/add'}>
+          onClick={() => history.push('/poll/add')}>
           Add New Poll
             </Button>
       </ButtonGroup>
