@@ -17,7 +17,9 @@ const App = () => {
           <Header />
           <div className="container">
             <Suspense fallback={<div>loading</div>}>
- 
+                <Route exact path="/login" name="Login Page" component={Login} />
+                <Route exact path="/" name="Home" component={Dashboard} />
+                <Route path="/poll/" name="Polls" component={Polls} />
             </Suspense>
           </div>
         </div>
