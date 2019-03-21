@@ -19,7 +19,7 @@ const AddPoll = props => {
         <>
         <h3>New Poll</h3>
         <Col lg={{ span: 8, offset: 2 }}>
-            <Card bg="dark">
+            <Card >
                 <br/>
                 <FinalForm
                     onSubmit={e => submit(e)}

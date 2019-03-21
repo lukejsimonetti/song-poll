@@ -18,7 +18,7 @@ const View = props => {
     return (
         <Col md={{ span: 10, offset: 1 }}>
             <h3>{currentPoll.pollName}</h3>
-            <Card bg="dark">
+            <Card >
                 {JSON.stringify(currentPoll)}
                 <Table striped hover>
                     <thead>

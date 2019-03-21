@@ -8,7 +8,7 @@ const List = props => {
         <>
             <h3>Polls</h3>
             <Col md={{ span: 8, offset: 2 }}>
-                <Card bg="dark">
+                <Card >
                     {JSON.stringify(polls)}
                     <br />
                     <br />
