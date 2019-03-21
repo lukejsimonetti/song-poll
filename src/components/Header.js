@@ -8,7 +8,7 @@ const Header = ({ history }) => {
   const { userName, isAuthenticated } = useContext(AppStateContext)
 
   const auth = () => {
-    if (!isAuthenticated && window.location.hash !== "#/login") {
+    if (!isAuthenticated && history.location.pathname !== "/login") {
       history.push('/login')
       return
     }
@@ -16,15 +16,11 @@ const Header = ({ history }) => {
   }
 
   useEffect(() => {
-    auth()
-  }, [isAuthenticated])
-
-  history.listen(() => {
-    // timeout prevents race condition between router and updating the hook lol
-    setTimeout(() => {
+    if(!isAuthenticated){
       auth()
-    }, 500)
-  })
+    }
+  }, [isAuthenticated, history.location.pathname])
+
 
   return (
     <div className="header">
