@@ -3,6 +3,11 @@ import { Button, ButtonGroup } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 
 const Header = ({ history }) => {
+
+  history.listen(() => {
+    console.log("gotherer")
+  })
+
   return (
     <div className="header">
       <h1 style={{ margin: 0, fontWeight: 200 }}>
