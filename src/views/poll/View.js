@@ -11,15 +11,28 @@ const View = props => {
         if (currentPoll.length == 0) {
             getPoll(props.match.params.id)
                 .then(res => {
-                    setCurrentPoll(res.data)
+                    setSortedPoll(res.data)
                 })
         }
-    }, [])
+    }, [currentPoll])
+
+const setSortedPoll = (d) => {
+    let obj = d
+    obj.items.sort((a,b) => {
+        return a.item_label.localeCompare(b.item_label)
+    })
+    setCurrentPoll(obj)
+}
 
     const vote = (songID) => {
         axios.post('/api/vote', {songID, slugID: currentPoll.slug})
         .then((res) => {
-            setCurrentPoll(res.data)
+            setSortedPoll(res.data)
+        })
+        .catch(err => {
+            if(err.response.status == 400){
+                alert(err.response.data)
+            }
         })
     }
 
@@ -31,7 +44,6 @@ const View = props => {
         <Col md={{ span: 10, offset: 1 }}>
             <h3>{currentPoll.pollName}</h3>
             <Card >
-                {JSON.stringify(currentPoll)}
                 <Table striped hover>
                     <thead>
                         <tr>
@@ -51,9 +63,10 @@ const View = props => {
                                         <strong>{v.item_label}</strong>
                                     </td>
                                     <td>
-                                        <a href={`${v.link}`} target="_blank">
+                                        {v.link ? <a href={`${v.link}`} target="_blank">
                                             <strong><i className="fa fa-link"/> Video Link</strong>
-                                        </a>
+                                        </a> : "N/A"
+                                        }
                                     </td>
                                     <td>
                                         <Button onClick={() => vote(v.id)} variant="success" size="sm">
@@ -61,7 +74,7 @@ const View = props => {
                                         </Button>
                                     </td>
                                     <td>
-                                        {v.users_vote.map((v,i) => {
+                                        {v.users_vote && v.users_vote.length > 0 ? v.users_vote.map((v,i) => {
                                             if(v.users_vote && v.users_vote.length === i){
                                                 return ", " + caps(v)
                                             }
@@ -69,7 +82,8 @@ const View = props => {
                                                 return caps(v)
                                             }
                                             return ", " + caps(v)
-                                        })}
+                                        }) : "(No votes yet)"
+                                    }
                                     </td>
                                 </tr>
                             )

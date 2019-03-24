@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { PollAPIContext } from '../../contexts/PollAPIContext';
-import { Form, Button, ButtonGroup, Row, Col, Card, ListGroup } from "react-bootstrap";
+import { Col, Card, ListGroup } from "react-bootstrap";
 
 const List = props => {
     const { polls } = useContext(PollAPIContext)
@@ -9,6 +9,7 @@ const List = props => {
             <h3>Polls</h3>
             <Col md={{ span: 8, offset: 2 }}>
                 <Card >
+                    <br/>
                     <Col md={{ span: 6, offset: 3 }}>
                         <ListGroup as="ul">
                             {polls && polls.map((v, i) => {

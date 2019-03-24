@@ -73,7 +73,6 @@ const AddPoll = props => {
                                                         style={{marginRight: 10}}
                                                     />
                                                     <Field
-                                                        validate={value => (value ? undefined : "Required")}
                                                         name={`${name}.link`}
                                                         label="Link"
                                                         component="input"
