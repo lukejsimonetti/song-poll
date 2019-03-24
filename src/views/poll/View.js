@@ -16,13 +16,13 @@ const View = props => {
         }
     }, [currentPoll])
 
-const setSortedPoll = (d) => {
-    let obj = d
-    obj.items.sort((a,b) => {
-        return a.item_label.localeCompare(b.item_label)
-    })
-    setCurrentPoll(obj)
-}
+    const setSortedPoll = (d) => {
+        let obj = d
+        obj.items.sort((a,b) => {
+            return a.item_label.localeCompare(b.item_label)
+        })
+        setCurrentPoll(obj)
+    }
 
     const vote = (songID) => {
         axios.post('/api/vote', {songID, slugID: currentPoll.slug})
@@ -42,7 +42,16 @@ const setSortedPoll = (d) => {
 
     return (
         <Col md={{ span: 10, offset: 1 }}>
-            <h3 style={{fontWeight: 300}}><i className="fa fa-calendar" /> {currentPoll.poll_name}</h3>
+            <Row>
+                <Col sm={{span: 1}}>
+                    <a className="btn btn-primary" onClick={() => props.history.push('/poll/list')}>
+                        <i className="fa fa-chevron-left"/> Back to list
+                    </a>
+                </Col>
+                <Col sm={{span: 6, offset: 2}}>
+                    <h3 style={{fontWeight: 300}}><i className="fa fa-calendar" /> {currentPoll.poll_name}</h3>
+                </Col>
+            </Row>
             <Card >
                 <Table striped hover>
                     <thead>

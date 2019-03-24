@@ -33,11 +33,7 @@ const PollAPIProvider = props => {
         })
     }
 
-    const votePoll = (data) => {
-
-    }
-
-    return <PollAPIContext.Provider value={{ polls, addPoll, getPoll, votePoll}}>
+    return <PollAPIContext.Provider value={{ polls, addPoll, getPoll}}>
         {props.children}
     </PollAPIContext.Provider>
 }

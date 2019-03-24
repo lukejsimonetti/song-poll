@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import { Form as FinalForm, Field } from "react-final-form";
 import arrayMutators from "final-form-arrays";
 import { FieldArray } from "react-final-form-arrays";
-import { Form, Button, ButtonGroup, Row, Col, Card, InputGroup } from "react-bootstrap";
+import { Form, Button, ButtonGroup, Row, Col, Card, HelpBlock } from "react-bootstrap";
 
 import { PollAPIContext } from '../../contexts/PollAPIContext';
 import { AppStateContext } from '../../contexts/AppStateContext';
 
 const AddPoll = props => {
     const {addPoll } = useContext(PollAPIContext)
-    // const { isLoading, setIsLoading } = useContext(AppStateContext)
 
     const submit = (values) => {
         addPoll(values)
@@ -88,8 +87,14 @@ const AddPoll = props => {
                                     </FieldArray>
                                 </Row>
                                 <Row className="mb-3">
-                                    <Col md={{span: 3, offset: 9}}>
-                                        <ButtonGroup>
+                                    <Col md={{span: 5, offset: 7}}>
+                                            <Button
+                                                variant="inverse"
+                                                size="sm"
+                                                onClick={() => props.history.push('/poll/list')}
+                                                >
+                                                Cancel
+                                        </Button>
                                             <Button
                                                 variant="success"
                                                 size="sm"
@@ -98,10 +103,15 @@ const AddPoll = props => {
                                             >
                                                 Create Poll
                                         </Button>
-                                        </ButtonGroup>
+                                        <br/>
+                                        <br/>
+                                        <p className="text-muted" style={{fontSize: 11}}>
+                                            Adding a new poll cannot be undone.
+                                        </p>
                                     </Col>
                                 </Row>
                             </Form>
+                            
                         )}
                 />
             </Card>

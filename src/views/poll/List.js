@@ -9,13 +9,13 @@ const List = props => {
         <>
             <h3>Polls</h3>
             <Col md={{ span: 8, offset: 2 }}>
-                <Card >
                     <br/>
                     <Col md={{ span: 6, offset: 3 }}>
                         <ListGroup as="ul">
                             {polls.length > 0 ? polls.map((v, i) => {
                                 return (
-                                    <ListGroup.Item action as="li" key={i} 
+                                    <ListGroup.Item 
+                                        action as="li" key={i} 
                                         onClick={() => props.history.push(`/poll/view/${v.slug}`)}>
                                         <h5>
                                             {v.poll_name}
@@ -26,7 +26,6 @@ const List = props => {
                         </ListGroup>
                     </Col>
                     <br />
-                </Card>
             </Col>
         </>
     );
