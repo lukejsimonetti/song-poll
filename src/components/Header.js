@@ -15,11 +15,11 @@ const Header = ({ history }) => {
     return false
   }
 
-  useEffect(() => {
-    if(!isAuthenticated){
-      auth()
-    }
-  }, [isAuthenticated, history.location.pathname])
+  // useEffect(() => {
+  //   if(!isAuthenticated){
+  //     auth()
+  //   }
+  // }, [isAuthenticated, userName, history.location.pathname])
 
 
   return (

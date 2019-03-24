@@ -9,9 +9,6 @@ const List = props => {
             <h3>Polls</h3>
             <Col md={{ span: 8, offset: 2 }}>
                 <Card >
-                    {JSON.stringify(polls)}
-                    <br />
-                    <br />
                     <Col md={{ span: 6, offset: 3 }}>
                         <ListGroup as="ul">
                             {polls && polls.map((v, i) => {
