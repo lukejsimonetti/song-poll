@@ -13,8 +13,7 @@ const PollAPIProvider = props => {
     const getPolls = () => {
         axios.get('/api/polls')
         .then((res) => {
-            let polls = res.data.reverse()
-            setPoll(polls)
+            setPoll(res.data.reverse())
         })
         .catch(err => {
             alert(err)

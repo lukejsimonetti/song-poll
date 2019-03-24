@@ -41,7 +41,7 @@ const AddPoll = props => {
                                     <Col md={{span: 3, offset: 3}}>
                                         <Field
                                             validate={value => (value ? undefined : "Required")}
-                                            name="pollName"
+                                            name="poll_name"
                                             component="input"
                                             placeholder="Poll Name"
                                         />

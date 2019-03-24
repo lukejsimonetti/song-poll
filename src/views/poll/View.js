@@ -42,7 +42,7 @@ const setSortedPoll = (d) => {
 
     return (
         <Col md={{ span: 10, offset: 1 }}>
-            <h3>{currentPoll.pollName}</h3>
+            <h3 style={{fontWeight: 300}}><i className="fa fa-calendar" /> {currentPoll.poll_name}</h3>
             <Card >
                 <Table striped hover>
                     <thead>
@@ -63,7 +63,8 @@ const setSortedPoll = (d) => {
                                         <strong>{v.item_label}</strong>
                                     </td>
                                     <td>
-                                        {v.link ? <a href={`${v.link}`} target="_blank">
+                                        {v.link ? 
+                                        <a className="btn btn-primary btn-sm" href={`${v.link}`} target="_blank">
                                             <strong><i className="fa fa-link"/> Video Link</strong>
                                         </a> : "N/A"
                                         }
