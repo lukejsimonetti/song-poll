@@ -10,7 +10,7 @@ const common = require('./webpack.common')
 const subdomainPrefix = process.env.URL_CONFIGS_SUBDOMAIN_PREFIX
 const topLevelDomain = process.env.URL_CONFIGS_TOP_LEVEL_DOMAIN
 
-const publicPath = `https://www.songpollapp.com/build`
+const publicPath = `https://www.songpollapp.com/`
 
 module.exports = merge(common, {
     mode: 'production',
