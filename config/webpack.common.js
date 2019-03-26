@@ -5,8 +5,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const path = require('path')
 
-const buildPath = path.resolve(__dirname, '../', 'public/build')
-const bundlePath = path.resolve(__dirname, '../', 'public/build')
+const buildPath = path.resolve(__dirname, '../', 'docs/build')
+const bundlePath = path.resolve(__dirname, '../', 'docs/build')
 
 module.exports = {
     devtool: 'eval',

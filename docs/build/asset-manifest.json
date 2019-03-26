@@ -1,0 +1,12 @@
+{
+  "vendors.js": "https://www.songpollapp.com/buildjs/vendors.686270f01807efbd8c78.js",
+  "addPoll.js": "https://www.songpollapp.com/buildjs/addPoll.e3b334186abf9cffc9ec.js",
+  "index.js": "https://www.songpollapp.com/buildjs/index.29657bc5e9a2a88e076c.js",
+  "listPoll.js": "https://www.songpollapp.com/buildjs/listPoll.f43ab678a1049908aea9.js",
+  "polls.js": "https://www.songpollapp.com/buildjs/polls.9f36bbaa28ec5d685c59.js",
+  "runtime.js": "https://www.songpollapp.com/buildjs/runtime.5e1a6e210bb54305eba1.js",
+  "styles.css": "https://www.songpollapp.com/buildcss/6.styles.9fc2b96c3496beeabea2.css",
+  "styles.js": "https://www.songpollapp.com/buildjs/styles.b73cdf57ae60b796ab22.js",
+  "viewPoll.js": "https://www.songpollapp.com/buildjs/viewPoll.09b0bcc56bd10477ab06.js",
+  "index.html": "https://www.songpollapp.com/buildindex.html"
+}
