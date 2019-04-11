@@ -1,12 +1,11 @@
 {
-  "vendors.js": "https://www.songpollapp.com/js/vendors.686270f01807efbd8c78.js",
-  "addPoll.js": "https://www.songpollapp.com/js/addPoll.e3b334186abf9cffc9ec.js",
-  "index.js": "https://www.songpollapp.com/js/index.29657bc5e9a2a88e076c.js",
-  "listPoll.js": "https://www.songpollapp.com/js/listPoll.f43ab678a1049908aea9.js",
-  "polls.js": "https://www.songpollapp.com/js/polls.9f36bbaa28ec5d685c59.js",
-  "runtime.js": "https://www.songpollapp.com/js/runtime.0faea6a1e08ff713eb4c.js",
-  "styles.css": "https://www.songpollapp.com/css/6.styles.9fc2b96c3496beeabea2.css",
-  "styles.js": "https://www.songpollapp.com/js/styles.b73cdf57ae60b796ab22.js",
-  "viewPoll.js": "https://www.songpollapp.com/js/viewPoll.09b0bcc56bd10477ab06.js",
-  "index.html": "https://www.songpollapp.com/index.html"
+  "addPoll.js": "http://localhost:3002/js/addPoll.js",
+  "index.js": "http://localhost:3002/js/index.js",
+  "listPoll.js": "http://localhost:3002/js/listPoll.js",
+  "polls.js": "http://localhost:3002/js/polls.js",
+  "runtime.js": "http://localhost:3002/js/runtime.js",
+  "styles.js": "http://localhost:3002/js/styles.js",
+  "vendors.js": "http://localhost:3002/js/vendors.js",
+  "viewPoll.js": "http://localhost:3002/js/viewPoll.js",
+  "index.html": "http://localhost:3002/index.html"
 }

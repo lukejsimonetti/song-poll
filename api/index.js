@@ -2,9 +2,7 @@ var express = require('express')
 var app = express()
 var port = 3001
 var bodyParser = require('body-parser');
-var session = require('express-session');
 app.use(bodyParser.json({limit: '50mb'}));
-app.use(session({secret: 'ssshhhhh'}));
 
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
