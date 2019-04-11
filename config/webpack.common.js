@@ -40,7 +40,7 @@ module.exports = {
         styles: './src/index.css'
     },
     plugins: [
-        new CleanWebpackPlugin(['song-poll'], { root: bundlePath }),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Song Poll',
             template: 'public/index.html'
