@@ -2926,9 +2926,9 @@ dot-prop@^4.1.0:
   dependencies:
     is-obj "^1.0.0"
 
-dotenv@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
+dotenv@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-7.0.0.tgz#a2be3cd52736673206e8a85fb5210eea29628e7c"
 
 duplexer3@^0.1.4:
   version "0.1.4"
@@ -8247,7 +8247,7 @@ webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
-webpack-cli@^3.1.2:
+webpack-cli@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.3.0.tgz#55c8a74cae1e88117f9dda3a801c7272e93ca318"
   dependencies:
